@@ -12,11 +12,11 @@
 
 <p align="center">
 -
-Video (<a href="https://www.youtube.com/watch?v=qy2MrNhsoIs/">YouTube</a> | <a href="https://www.bilibili.com/video/BV1G24y1d7Tt/">Bilibili</a>)
+Video (<a href="https://www.youtube.com/watch?v=gKGqCE7id4U">YouTube</a> | <a href="https://www.youtube.com/watch?v=gKGqCE7id4U">Bilibili</a>)
 -
 Paper (<a href="https://arxiv.org/abs/2210.01448/">arXiv</a>)
 -
-Project Page (<a href="https://github.com/Aubrey-ao/HumanBehaviorAnimation/tree/main/HumanBehaviorAnimation/RhythmicGesticulator/Simplified_Version">github</a>)
+Project Page (<a href="https://pku-mocca.github.io/Semantic-Gesticulator-Page/">github</a>)
 -
 
 </p>
