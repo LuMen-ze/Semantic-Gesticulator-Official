@@ -14,7 +14,7 @@
 -
 Video (<a href="https://www.youtube.com/watch?v=gKGqCE7id4U">YouTube</a> | <a href="https://www.youtube.com/watch?v=gKGqCE7id4U">Bilibili</a>)
 -
-Paper (<a href="https://arxiv.org/abs/2210.01448/">arXiv</a>)
+Paper (<a href="https://arxiv.org/abs/2405.09814">arXiv</a>)
 -
 Project Page (<a href="https://pku-mocca.github.io/Semantic-Gesticulator-Page/">github</a>)
 -
