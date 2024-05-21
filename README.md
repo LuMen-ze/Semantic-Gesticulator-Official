@@ -12,7 +12,7 @@
 
 <p align="center">
 -
-Video (<a href="https://www.youtube.com/watch?v=gKGqCE7id4U">YouTube</a> | <a href="https://www.youtube.com/watch?v=gKGqCE7id4U">Bilibili</a>)
+Video (<a href="https://www.youtube.com/watch?v=gKGqCE7id4U">YouTube</a>)
 -
 Paper (<a href="https://arxiv.org/abs/2405.09814">arXiv</a>)
 -
