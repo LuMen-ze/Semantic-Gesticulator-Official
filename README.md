@@ -28,7 +28,7 @@ This codebase provides:
 - [ ] pretrained models
 - [ ] training & inference codes
 
-If you use the dataset or codes, please cite our [Paper](https://arxiv.org/abs/2401.01885)
+If you use the dataset or codes, please cite our [Paper](https://arxiv.org/abs/2405.09814)
 
 ```
 @article{
