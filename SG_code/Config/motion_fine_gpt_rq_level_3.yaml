@@ -1,0 +1,137 @@
+structure_vqvae:
+  name: SepVQVAE_DDP_body_hands
+  data: mocap
+  body:
+    joint_indexes: [0,1,2,3,5,6,7,9,10,11,12,13,14,16,17,18,19,44,45,46,47,72] #22(with root trans)
+    levels: 1
+    downs_t: [3, ]
+    strides_t: [2, ]
+    emb_width: 512
+    l_bins: 512
+    l_mu: 0.95
+    commit: 0.02
+    hvqvae_multipliers: [1, ]
+    width: 512
+    depth: 3
+    m_conv: 1.0
+    dilation_growth_rate: 3
+    sample_length: 120
+    use_bottleneck: True
+    bottleneck_type: 'rqvae'
+    rq_num_quantizers: 4
+    joint_channel: 3
+    vel: 1
+    acc: 1
+    reg: 0
+    vqvae_reverse_decoder_dilation: True
+    weight: 3
+    encoder_transformer: True
+    decoder_transformer: True
+    transformer_head: 4
+    transformer_depth: 3
+    transformer_dropout: 0
+    has_after_decoder_transformer: False
+    after_d_transformer_head: 4
+    after_d_transformer_depth: 2
+    after_d_transformer_dropout: 0
+  hands:
+    joint_indexes: [20,21,22,24,25,26,27,29,30,31,32,34,35,36,37,39,40,41,42,
+        48,49,50,52,53,54,55,57,58,59,60,62,63,64,65,67,68,69,70]
+    levels: 1
+    downs_t: [3, ]
+    strides_t: [2, ]
+    emb_width: 512
+    l_bins: 512
+    l_mu: 0.95
+    commit: 0.02
+    hvqvae_multipliers: [1, ]
+    width: 512
+    depth: 3
+    m_conv: 1.0
+    dilation_growth_rate: 3
+    sample_length: 240
+    use_bottleneck: True
+    bottleneck_type: 'rqvae'
+    rq_num_quantizers: 4
+    joint_channel: 3
+    vel: 1
+    acc: 1
+    reg: 0
+    vqvae_reverse_decoder_dilation: True
+    weight: 2
+    encoder_transformer: True
+    decoder_transformer: True
+    transformer_head: 4
+    transformer_depth: 2
+    transformer_dropout: 0
+    has_after_decoder_transformer: False
+    after_d_transformer_head: 4
+    after_d_transformer_depth: 2
+    after_d_transformer_dropout: 0
+
+  root_loss_weight: 0
+  use_bottleneck: True
+  joint_channel: 3
+  joint_num: 74
+  l_bins: 512
+
+structure_gpt:
+  name: Fine_GPT2_2part
+  layer_no: 3
+  block_size: 15
+  n_music: 437
+  n_music_emb: 768
+
+  embd_pdrop: 0.1
+  resid_pdrop: 0.1
+  attn_pdrop: 0.1
+  vocab_size_body: 512
+  vocab_size_hands: 512
+  n_layer: 6
+  n_head: 12
+  n_embd: 768
+  n_music: 437
+  n_music_emb: 768
+  n_modality: 3 
+
+
+data:
+  name: mocap
+  dir: Data/SG_processed
+  test_files: ["001_Neutral_0_mirror_x_1_0_retarget2mocap", "001_Neutral_0_x_1_0_retarget2mocap", "006_Sad_0_mirror_x_1_0_retarget2mocap", "006_Sad_0_x_1_0_retarget2mocap"]
+  seq_len_train: 120  
+  stride_train: 8  
+  seq_len_test: 2400  
+  stride_test: 2400  
+  samples_per_test: 1  
+  ds_rate: 8  
+
+optimizer:
+  type: AdamW
+  kwargs:
+    lr: 0.0005
+#    betas: [0.5, 0.999]
+    betas: [0.9, 0.999]
+    weight_decay: 0
+  schedular_kwargs:
+    milestones: [80, 150, 220]
+    gamma: 0.4
+
+exp_name: train_fine_gpt
+log_name: layer_number_3
+need_not_train_data: 0
+need_not_test_data: 1
+
+seed: 42
+batch_size: 512
+epochs: 100
+save_per_epochs: 10
+eval_per_epochs: 10
+log_per_updates: 1
+tensorboard: True
+cuda: True
+global_vel: False
+
+vqvae_weight: 'pretrain_models/rqvae.pt'
+
+init_weight: ''
