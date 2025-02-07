@@ -7,7 +7,7 @@
 
 ***
 <p align=center>
-<img src='media/SG_code.jpg' width='90%'> </img>
+<img src='media/sg.jpg' width='90%'> </img>
 </p>
 
 <p align="center">
